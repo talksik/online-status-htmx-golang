@@ -23,9 +23,8 @@ func updateStatusHandler(w http.ResponseWriter, r *http.Request) {
 
 	println("changing status")
 
-  queryParams := r.URL.Query()
-	h_status := queryParams.Get("statush")
-	a_status := queryParams.Get("statusa")
+	a_status := r.FormValue("statusa")
+  h_status := r.FormValue("statush")
 
   statusOne = h_status
   statusTwo = a_status

@@ -22,21 +22,48 @@ func Hello(name string) templ.Component {
 			var_1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, err = templBuffer.WriteString("<div>")
+		_, err = templBuffer.WriteString("<head><script src=\"https://cdn.tailwindcss.com\">")
 		if err != nil {
 			return err
 		}
-		var_2 := `Hello, `
+		var_2 := ``
 		_, err = templBuffer.WriteString(var_2)
 		if err != nil {
 			return err
 		}
-		var var_3 string = name
-		_, err = templBuffer.WriteString(templ.EscapeString(var_3))
+		_, err = templBuffer.WriteString("</script><script src=\"https://unpkg.com/htmx.org@1.9.5\" integrity=\"sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO\" crossorigin=\"anonymous\">")
 		if err != nil {
 			return err
 		}
-		_, err = templBuffer.WriteString("</div>")
+		var_3 := ``
+		_, err = templBuffer.WriteString(var_3)
+		if err != nil {
+			return err
+		}
+		_, err = templBuffer.WriteString("</script></head><div>")
+		if err != nil {
+			return err
+		}
+		var_4 := `Hello, `
+		_, err = templBuffer.WriteString(var_4)
+		if err != nil {
+			return err
+		}
+		var var_5 string = name
+		_, err = templBuffer.WriteString(templ.EscapeString(var_5))
+		if err != nil {
+			return err
+		}
+		_, err = templBuffer.WriteString("</div><button hx-post=\"/\" hx-target=\"body\">")
+		if err != nil {
+			return err
+		}
+		var_6 := `test`
+		_, err = templBuffer.WriteString(var_6)
+		if err != nil {
+			return err
+		}
+		_, err = templBuffer.WriteString("</button>")
 		if err != nil {
 			return err
 		}

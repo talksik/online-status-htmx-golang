@@ -22,7 +22,7 @@ func GetStatus(statusOne string, statusTwo string) templ.Component {
 			var_1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, err = templBuffer.WriteString("<script src=\"https://cdn.tailwindcss.com\">")
+		_, err = templBuffer.WriteString("<html><head><script src=\"https://cdn.tailwindcss.com\">")
 		if err != nil {
 			return err
 		}
@@ -31,7 +31,16 @@ func GetStatus(statusOne string, statusTwo string) templ.Component {
 		if err != nil {
 			return err
 		}
-		_, err = templBuffer.WriteString("</script><div id=\"main\" class=\"flex flex-row gap-2\"><form hx-post=\"/changestatus\" hx-target=\"#main\" hx-swap=\"outerHTML\"><input id=\"statusH\" name=\"statush\" type=\"text\" placeholder=\"Enter status H\" value=\"")
+		_, err = templBuffer.WriteString("</script><script src=\"https://unpkg.com/htmx.org@1.9.5\" integrity=\"sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO\" crossorigin=\"anonymous\">")
+		if err != nil {
+			return err
+		}
+		var_3 := ``
+		_, err = templBuffer.WriteString(var_3)
+		if err != nil {
+			return err
+		}
+		_, err = templBuffer.WriteString("</script></head><form id=\"form\" hx-post=\"/changestatus\" hx-select=\"#form\" hx-swap=\"outerHTML\"><input id=\"statusH\" name=\"statush\" type=\"text\" placeholder=\"Enter status H\" value=\"")
 		if err != nil {
 			return err
 		}
@@ -51,12 +60,12 @@ func GetStatus(statusOne string, statusTwo string) templ.Component {
 		if err != nil {
 			return err
 		}
-		var_3 := `Update`
-		_, err = templBuffer.WriteString(var_3)
+		var_4 := `Update`
+		_, err = templBuffer.WriteString(var_4)
 		if err != nil {
 			return err
 		}
-		_, err = templBuffer.WriteString("</button></form></div>")
+		_, err = templBuffer.WriteString("</button></form></html>")
 		if err != nil {
 			return err
 		}
