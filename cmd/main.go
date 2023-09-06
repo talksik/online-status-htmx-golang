@@ -19,8 +19,6 @@ func getStatusHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateStatusHandler(w http.ResponseWriter, r *http.Request) {
-	// TODO: read request and update statuses
-
 	println("changing status")
 
 	a_status := r.FormValue("statusa")
@@ -42,5 +40,5 @@ func main() {
 	http.HandleFunc("/", getStatusHandler)
 
 	fmt.Println("Listening on :3000")
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe("0.0.0.0:3000", nil)
 }
