@@ -31,7 +31,7 @@ func GetStatus(statusOne string, statusTwo string) templ.Component {
 		if err != nil {
 			return err
 		}
-		_, err = templBuffer.WriteString("</script><div id=\"main\" class=\"flex flex-row gap-2\"><form hx-post=\"/changestatus\" hx-target=\"#main\" hx-swap=\"outerHTML\"><input id=\"statusH\" name=\"Status H\" type=\"text\" placeholder=\"Enter status H\" value=\"")
+		_, err = templBuffer.WriteString("</script><div id=\"main\" class=\"flex flex-row gap-2\"><form hx-post=\"/changestatus\" hx-target=\"#main\" hx-swap=\"outerHTML\"><input id=\"statusH\" name=\"statush\" type=\"text\" placeholder=\"Enter status H\" value=\"")
 		if err != nil {
 			return err
 		}
@@ -39,7 +39,7 @@ func GetStatus(statusOne string, statusTwo string) templ.Component {
 		if err != nil {
 			return err
 		}
-		_, err = templBuffer.WriteString("\"><input id=\"statusA\" name=\"Status A\" type=\"text\" placeholder=\"Enter status, A\" value=\"")
+		_, err = templBuffer.WriteString("\"><input id=\"statusA\" name=\"statusa\" type=\"text\" placeholder=\"Enter status, A\" value=\"")
 		if err != nil {
 			return err
 		}

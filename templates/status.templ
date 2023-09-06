@@ -9,14 +9,15 @@ templ GetStatus(statusOne string, statusTwo string) {
       hx-swap="outerHTML"
     >
       <input
-        id="statusH" name="Status H" type="text"
+        id="statusH" name="statush" type="text"
         placeholder="Enter status H"
         value={ statusOne }
       />
 
       <input
-        id="statusA" name="Status A" type="text"
-        placeholder="Enter status, A" value={ statusTwo }
+        id="statusA" name="statusa" type="text"
+        placeholder="Enter status, A"
+        value={ statusTwo }
       />
 
       <button type="submit" class="button is-primary">Update</button>
